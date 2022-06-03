@@ -6,13 +6,12 @@ import FlagIcon from "@mui/icons-material/Flag";
 import SubscriptionsOutlinedIcon from "@mui/icons-material/SubscriptionsOutlined";
 import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
 import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { IconButton } from "@mui/material";
 import { Add } from "@mui/icons-material";
-import ForumIcon from '@mui/icons-material/Forum';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import ForumIcon from "@mui/icons-material/Forum";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function Header(props) {
   return (
@@ -26,12 +25,11 @@ function Header(props) {
 
         <div className="header__input">
           <SearchIcon />
-          <input type="text" />
+          <input type="text" placeholder="Search Facebook" />
         </div>
       </div>
 
       <div className="header__center">
-
         {/* icons for options */}
         <div className="header__option header__option--active">
           <HomeIcon fontSize="large" />
@@ -52,34 +50,29 @@ function Header(props) {
         <div className="header__option">
           <SupervisedUserCircleIcon fontSize="large" />
         </div>
-
       </div>
 
-      
       <div className="header__right">
         {/* avatar and some icons */}
         <div className="header__info">
+          <AccountCircleIcon fontSize="large" />
+          <h4>Guilherme Santos</h4>
 
-            <AccountCircleIcon fontSize="large"/>
-            <h4>Guilherme Santos</h4>
-
-            {/* doing a icon button */}
-            <IconButton>
-                <Add />
-            </IconButton>
-            <IconButton>
-                <ForumIcon />
-            </IconButton>
-            <IconButton>
-                <NotificationsActiveIcon />
-            </IconButton>
-            <IconButton>
-                <ExpandMoreIcon />
-            </IconButton>
+          {/* doing a icon button */}
+          <IconButton>
+            <Add />
+          </IconButton>
+          <IconButton>
+            <ForumIcon />
+          </IconButton>
+          <IconButton>
+            <NotificationsActiveIcon />
+          </IconButton>
+          <IconButton>
+            <ExpandMoreIcon />
+          </IconButton>
         </div>
-
       </div>
-
     </div>
   );
 }
