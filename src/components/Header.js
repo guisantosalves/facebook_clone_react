@@ -33,7 +33,7 @@ function Header(props) {
       <div className="header__center">
 
         {/* icons for options */}
-        <div className="header__option">
+        <div className="header__option header__option--active">
           <HomeIcon fontSize="large" />
         </div>
 
@@ -79,7 +79,7 @@ function Header(props) {
         </div>
 
       </div>
-      
+
     </div>
   );
 }
