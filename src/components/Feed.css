@@ -1,0 +1,12 @@
+/* Makes the flex item 
+flexible and sets the flex basis to zero, 
+resulting in an item that receives the specified 
+proportion of the free space in the flex container */
+.feed{
+    flex: 1;
+    padding: 30px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
