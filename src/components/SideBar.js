@@ -12,14 +12,17 @@ import { ExpandMoreOutlined } from "@mui/icons-material";
 function SideBar() {
   return (
     <div className="sidebar">
-      <SidebarRow src="" title="Guilherme santos" />
+      <SidebarRow
+        src="https://avatars.githubusercontent.com/u/Repositories59509356?s=96&v=4"
+        title="Guilherme santos"
+      />
       <SidebarRow Icon={LocalHospital} title="COVID-19 Information center" />
       <SidebarRow Icon={EmojiFlags} title="Pages" />
       <SidebarRow Icon={People} title="Friends" />
       <SidebarRow Icon={Chat} title="Messenger" />
       <SidebarRow Icon={Storefront} title="Marketplace" />
       <SidebarRow Icon={VideoLibrary} title="Videos" />
-      <SidebarRow Icon={ExpandMoreOutlined}/>
+      <SidebarRow Icon={ExpandMoreOutlined} />
     </div>
   );
 }
