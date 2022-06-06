@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import SideBar from "./components/SideBar";
+import Feed from "./components/Feed";
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
       {/* app body */}
       <div className="app__body">
         <SideBar />
-        {/* feed */}
+        
+        <Feed />
+        
         {/* widgets */}
       </div>
     </div>
