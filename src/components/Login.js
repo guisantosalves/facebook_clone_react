@@ -1,11 +1,15 @@
 import React from "react";
 import "./Login.css";
 import { Button } from "@mui/material";
+import {auth, provider} from "./firebase.js"
+import {signInWithPopup} from "firebase/auth"
 
 function Login() {
 
     const signIn = () => {
-        //sign in
+        signInWithPopup(auth, provider).then(result=>{
+            console.log(result.user.displayName+" e seu email é: "+result.user.email);
+        }).catch((error)=>alert(error.message))
     }
 
   return (

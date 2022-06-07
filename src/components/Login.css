@@ -1,8 +1,10 @@
+/* cetering the components of the page */
 .login {
     display: grid;
     place-items: center;
     height: 100vh;
 }
+
 .login > button {
     width: 300px;
     background-color: #2e81f4;
