@@ -24,10 +24,20 @@
     padding: 12px;
 }
 
+.frind_list {
+    flex-direction: column;
+}
+
 .row_friend {
     display: flex;
+    padding: 5px;
 }
 
 .row_friend > p {
     padding: 12px;
+}
+
+.row_friend:hover{
+    background-color: lightgrey;
+    border-radius: 10px;
 }
