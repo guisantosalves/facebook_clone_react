@@ -1,6 +1,11 @@
-import { Avatar } from "@mui/material";
 import React from "react";
 import "./Post.css";
+import { Avatar } from "@mui/material";
+import { ThumbUp } from "@mui/icons-material";
+import { ChatBubble } from "@mui/icons-material";
+import { NearMe } from "@mui/icons-material";
+import { AccountCircle } from "@mui/icons-material";
+import { ExpandMoreOutlined } from "@mui/icons-material";
 
 function Post({ profilePic, image, username, timestamp, message }) {
   return (
@@ -21,6 +26,29 @@ function Post({ profilePic, image, username, timestamp, message }) {
 
       <div className="post__image">
         <img src={image} alt="img post"/>
+      </div>
+
+      <div className="post__options">
+
+        <div className="post__option">
+          <ThumbUp />
+          <p>Like</p>
+        </div>
+
+        <div className="post__option">
+          <ChatBubble />
+          <p>Comment</p>
+        </div>
+
+        <div className="post__option">
+          <NearMe />
+          <p>Share</p>
+        </div>
+
+        <div className="post__option">
+          <AccountCircle />
+          <ExpandMoreOutlined />
+        </div>
       </div>
     </div>
   );
