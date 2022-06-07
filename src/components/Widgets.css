@@ -1,0 +1,33 @@
+.widgets{
+    width: 340px;
+    height: 100%;
+}
+
+.widgets__sponsored{
+    color: #3d4042;
+    font-weight: 300px;
+}
+
+.widgets__sponsored > h4 {
+    padding: 12px;
+}
+
+.widgets__contact {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.widgets__contact > h4 {
+    color: #3d4042;
+    font-weight: 300px;
+    padding: 12px;
+}
+
+.row_friend {
+    display: flex;
+}
+
+.row_friend > p {
+    padding: 12px;
+}
