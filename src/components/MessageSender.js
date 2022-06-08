@@ -5,6 +5,8 @@ import { Videocam } from "@mui/icons-material";
 import { PhotoLibrary } from "@mui/icons-material";
 import { InsertEmoticon } from "@mui/icons-material";
 import { useStateValue } from "./StateProvider";
+import {collection, addDoc, Timestamp} from "firebase/firestore";
+import db from "./firebase"
 
 function MessageSender(){
     const [input, setInput] = useState('');
@@ -12,11 +14,23 @@ function MessageSender(){
     const [{user}, dispatch] = useStateValue();
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         //avoiding the reload of the page
         e.preventDefault();
 
         //db stuff
+        try{
+            await addDoc(collection(db, 'posts'), {
+                profilePic: user.photoURL,
+                message: input,
+                timestamp: Timestamp.now(),
+                username: user.displayName,
+                image: imageUrl
+            })
+            
+        }catch(err){
+            alert(err);
+        }
 
         setInput("");
         setImageUrl("");

@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Feed.css";
 import StoryReel from "./StoryReel";
 import MessageSender from "./MessageSender";
 import Post from "./Post";
 
+import db from "./firebase";
+import { collection, query, onSnapshot, orderBy} from "firebase/firestore";
+
 function Feed() {
+  const [posts, setPosts] = useState([]);
+
+  //it's gonna set on post with the useEffect
+  useEffect(() => {
+    const q = query(collection(db, "posts"), orderBy("timestamp", "desc"));
+
+    onSnapshot(q, (querySnapshot) => {
+      setPosts(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      );
+    });
+
+  }, []);
+
   return (
     <div className="feed">
       {/* StoryReel */}
@@ -14,22 +34,16 @@ function Feed() {
       <MessageSender />
 
       {/* Post for feed */}
-      <Post
-        profilePic={`https://i.pinimg.com/564x/7a/ec/0e/7aec0e5b6e37a75dbc02d91e782a9e04.jpg`}
-        message="Aqui é o guizao do zap"
-        timestamp="timestamp here"
-        username="guilherme"
-        image="https://i.pinimg.com/564x/29/e5/fb/29e5fb4c3c21b45f481c3afd9fb8ab73.jpg"
-      />
-      <Post
-        profilePic={`https://i.pinimg.com/564x/7a/ec/0e/7aec0e5b6e37a75dbc02d91e782a9e04.jpg`}
-        message="Aqui é o guizao do zap"
-        timestamp="timestamp here"
-        username="guilherme"
-        image="https://i.pinimg.com/564x/29/e5/fb/29e5fb4c3c21b45f481c3afd9fb8ab73.jpg"
-      />
-      <Post />
-      <Post />
+      {posts.map((post)=>(
+        <Post 
+          key={post.id}
+          profilePic={post.data.profilePic}
+          message={post.data.message}
+          timestamp={post.data.timestamp}
+          username={post.data.username}
+          image={post.data.image}
+        />
+      ))}
     </div>
   );
 }

@@ -8,6 +8,8 @@ import { AccountCircle } from "@mui/icons-material";
 import { ExpandMoreOutlined } from "@mui/icons-material";
 
 function Post({ profilePic, image, username, timestamp, message }) {
+
+  //we need set timestamp in a different way
   return (
     <div className="post">
       <div className="post__top">
@@ -15,7 +17,7 @@ function Post({ profilePic, image, username, timestamp, message }) {
         <Avatar src={profilePic} className="post__avatar" />
         <div className="post__topInfo">
           <h3>{username}</h3>
-          <p>timestamp...</p>
+          <p>{new Date(timestamp?.toDate()).toUTCString()}</p>
         </div>
 
       </div>
