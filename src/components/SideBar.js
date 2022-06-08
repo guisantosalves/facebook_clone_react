@@ -8,13 +8,17 @@ import { Chat } from "@mui/icons-material";
 import { Storefront } from "@mui/icons-material";
 import { VideoLibrary } from "@mui/icons-material";
 import { ExpandMoreOutlined } from "@mui/icons-material";
+import {useStateValue} from "./StateProvider"
 
 function SideBar() {
+
+  const [{user}, dispatch] = useStateValue();
+
   return (
     <div className="sidebar">
       <SidebarRow
-        src="https://avatars.githubusercontent.com/u/Repositories59509356?s=96&v=4"
-        title="Guilherme santos"
+        src={user.photoURL}
+        title={user.displayName}
       />
       <SidebarRow Icon={LocalHospital} title="COVID-19 Information center" />
       <SidebarRow Icon={EmojiFlags} title="Pages" />

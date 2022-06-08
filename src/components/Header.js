@@ -6,14 +6,17 @@ import FlagIcon from "@mui/icons-material/Flag";
 import SubscriptionsOutlinedIcon from "@mui/icons-material/SubscriptionsOutlined";
 import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
 import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import {Avatar} from '@mui/material'
 import { IconButton } from "@mui/material";
 import { Add } from "@mui/icons-material";
 import ForumIcon from "@mui/icons-material/Forum";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useStateValue } from "./StateProvider";
 
 function Header(props) {
+  const [{user}, dispatch] = useStateValue();
+
   return (
     <div className="header">
       <div className="header__left">
@@ -55,8 +58,8 @@ function Header(props) {
       <div className="header__right">
         {/* avatar and some icons */}
         <div className="header__info">
-          <AccountCircleIcon fontSize="large" />
-          <h4>Guilherme Santos</h4>
+          <Avatar src={user.photoURL}/>
+          <h4>{user.displayName}</h4>
 
           {/* doing a icon button */}
           <IconButton>
