@@ -16,4 +16,5 @@ You can download my project and run with these steps.
     <li>Hooks</li>
     <li>Firebase</li>
     <li>Google authentication</li>
+    <li>Material UI</li>
 </ul>
